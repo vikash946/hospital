@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <title>Notes Wallah - Login</title>
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <img src="C:\Users\Sushil Kumar Singh\Pictures\th.jpg" alt="Notes Wallah Logo">
+        </div>
+        <div class="login-form">
+            <h2>Login</h2>
+            <form>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">sign in</button>
+            </form>
+            <p><a href="#">Forgot Password?</a></p>
+            <p>Don't have an account? <a href="#">Sign Up</a></p>
+        </div>
+    </div>
+</body>
+<script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Replace these with actual user data from your database or backend
+        const users = [{
+                email: 'vtu19356@veltech.edu.in',
+                password: 'password1'
+            }, {
+                email: 'vtu19043@veltech.edu.in',
+                password: 'password2'
+            },
+            // Add more user data as needed
+        ];
+
+        const enteredEmail = document.querySelector('input[type="email"]').value;
+        const enteredPassword = document.querySelector('input[type="password"]').value;
+
+        // Check if there's a user with the entered email
+        const user = users.find(user => user.email === enteredEmail);
+
+        if (user && user.password === enteredPassword) {
+            window.location.href = 'department.html'; // Redirect to the main page
+        } else {
+            alert('Invalid email or password');
+        }
+    });
+</script>
+
+
+</html>
